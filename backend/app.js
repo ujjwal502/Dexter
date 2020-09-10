@@ -9,13 +9,14 @@ require('dotenv').config();
 // import routes
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
+const liveRoutes = require('./routes/livestream');
 
 // app
 const app = express();
 
 // db
 mongoose
-    .connect('mongodb://localhost:27017/manju', {
+    .connect('mongodb+srv://manju:manjuchavva@cluster0.p0ek2.mongodb.net/<d>?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useCreateIndex: true
     })
@@ -31,7 +32,7 @@ app.use(cors());
 // routes middleware
 app.use('/api', authRoutes);
 app.use('/api', userRoutes);
-
+app.use('/api',liveRoutes)
 
 const port = process.env.PORT || 8000;
 
