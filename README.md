@@ -1,4 +1,6 @@
 # Dexter
+This is the backend for Dexter
+***
 Skill-learning Platform
 ***
 
